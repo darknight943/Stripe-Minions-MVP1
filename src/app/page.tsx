@@ -1,8 +1,16 @@
+"use client";
+
+import { useState } from 'react';
 
 export default function Home() {
+  const [count, setCount] = useState(0);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Welcome to Stripe Minions MVP1</h1>
-    </main>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>Counter Application</h1>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)} style={{ marginLeft: '10px' }}>Decrement</button>
+    </div>
   );
 }
